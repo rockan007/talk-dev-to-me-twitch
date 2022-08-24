@@ -30,9 +30,9 @@ const MyAccount = () => {
             <h1>
                 My Account
             </h1>
-            <p>
+            <div>
                 {view}
-            </p>
+            </div>
         </div>
     )
 }

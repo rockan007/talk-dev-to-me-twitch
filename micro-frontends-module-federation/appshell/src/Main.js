@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Route, Switch, Link} from "react-router-dom";
+import {Route, Routes, Link} from "react-router-dom";
 import clsx from 'clsx';
 import { makeStyles, useTheme, StylesProvider, createGenerateClassName } from '@material-ui/core/styles';
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -182,11 +182,11 @@ const Main = () => {
                       [classes.contentShift]: open,
                   })}>
                   <div className={classes.drawerHeader} />
-                  <Switch>
-                      <Route exact path="/myaccount" render={_ => renderMFE(MyAccount)}/>
-                      <Route path="/shop" render={_ => renderMFE(Catalogue)}/>
-                      <Route path="/" render={_ => renderMFE(SignIn)}/>
-                  </Switch>                  
+                  <Routes>
+                      <Route exact path="/myaccount" element={ renderMFE(MyAccount) }/>
+                      <Route path="/shop/*" element={ renderMFE(Catalogue) }/>
+                      <Route path="/" element={ renderMFE(SignIn) }/>
+                  </Routes>                  
               </main>
               
           </div>
